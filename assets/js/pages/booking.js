@@ -17,6 +17,8 @@
  * Old Name: FrontendBook
  */
 App.Pages.Booking = (function () {
+    moment.tz.setDefault('Asia/Tehran');
+
     const $selectDate = $('#select-date');
     const $selectService = $('#select-service');
     const $selectProvider = $('#select-provider');
