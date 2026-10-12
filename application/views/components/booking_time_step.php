@@ -13,7 +13,16 @@
 
         <div class="row frame-content">
             <div class="col-12 col-lg-6">
-                <div id="select-date" class="mx-auto my-4"></div>
+                <div id="jalali-date-wrapper" class="mx-auto my-4" style="max-width: 320px;">
+                    <div id="jalali-calendar"></div>
+
+                    <input
+                        type="hidden"
+                        id="select-date-gregorian"
+                    >
+
+                    <div id="select-date" style="display: none;"></div>
+                </div>
 
             </div>
 

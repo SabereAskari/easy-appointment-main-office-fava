@@ -78,5 +78,84 @@
 }
 
 #book-appointment-wizard .flatpickr-calendar.inline {
-    margin: auto; 
+    margin: auto;
+}
+
+/* Hide the Gregorian flatpickr calendar completely - the Jalali calendar is used instead */
+#jalali-date-wrapper .flatpickr-calendar,
+#jalali-date-wrapper .flatpickr-wrapper {
+    display: none !important;
+}
+
+/* Jalali calendar */
+#jalali-calendar {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 12px;
+    direction: rtl;
+    background: #fff;
+    user-select: none;
+}
+
+#jalali-calendar .jc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+#jalali-calendar .jc-title {
+    font-weight: 600;
+}
+
+#jalali-calendar .jc-nav {
+    border: 1px solid #dee2e6;
+    background: #f8f9fa;
+    border-radius: 6px;
+    min-width: 32px;
+    cursor: pointer;
+}
+
+#jalali-calendar .jc-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+#jalali-calendar .jc-weekdays div {
+    font-weight: 700;
+    padding: 4px 0;
+    color: #6c757d;
+}
+
+#jalali-calendar .jc-day {
+    padding: 6px 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#jalali-calendar .jc-day:hover {
+    background: #eef6f1;
+}
+
+#jalali-calendar .jc-today {
+    border: 1px solid #35a768;
+}
+
+#jalali-calendar .jc-selected {
+    background: #35a768;
+    color: #fff;
+}
+
+#jalali-calendar .jc-disabled {
+    color: #c6c6c6;
+    cursor: not-allowed;
+}
+
+#jalali-calendar .jc-disabled:hover {
+    background: transparent;
+}
+
+#jalali-calendar .jc-empty {
+    padding: 6px 0;
 }

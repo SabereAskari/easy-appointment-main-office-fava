@@ -17,8 +17,6 @@
  * Old Name: FrontendBook
  */
 App.Pages.Booking = (function () {
-    moment.tz.setDefault('Asia/Tehran');
-
     const $selectDate = $('#select-date');
     const $selectService = $('#select-service');
     const $selectProvider = $('#select-provider');
@@ -67,6 +65,235 @@ App.Pages.Booking = (function () {
     }
 
     /**
+     * Get the Jalali calendar parts of a JavaScript date.
+     *
+     * @param {Date} date
+     *
+     * @returns {{year: Number, month: Number, day: Number}}
+     */
+    function getJalaliParts(date) {
+        const parts = new Intl.DateTimeFormat('en-u-ca-persian', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+        }).formatToParts(date);
+
+        const get = (type) => Number(parts.find((part) => part.type === type).value);
+
+        return {year: get('year'), month: get('month'), day: get('day')};
+    }
+
+    /**
+     * Find the Gregorian date of the first day of the given Jalali month.
+     *
+     * @param {Number} jalaliYear
+     * @param {Number} jalaliMonth
+     *
+     * @returns {Object} moment object
+     */
+    function findJalaliMonthStart(jalaliYear, jalaliMonth) {
+        // A rough guess: Jalali month m of year Y starts somewhere around Gregorian month m.
+        const guess = moment(`${jalaliYear + 621}-${jalaliMonth}-21`, 'YYYY-M-D');
+
+        for (let offset = -370; offset <= 370; offset += 1) {
+            const candidate = guess.clone().add(offset, 'days');
+            const parts = getJalaliParts(candidate.toDate());
+
+            if (parts.year === jalaliYear && parts.month === jalaliMonth && parts.day === 1) {
+                return candidate;
+            }
+        }
+
+        return guess;
+    }
+
+    let currentJalaliView = null;
+
+    let selectedBookingMoment = null;
+
+    let unavailableBookingDates = [];
+
+    /**
+     * Store unavailable dates and re-render the Jalali calendar with them disabled.
+     *
+     * @param {Array} dates Array of 'YYYY-MM-DD' strings.
+     */
+    function setUnavailableDates(dates) {
+        unavailableBookingDates = dates || [];
+
+        renderJalaliCalendar();
+    }
+
+    /**
+     * Render the Jalali calendar in #jalali-calendar.
+     */
+    function renderJalaliCalendar() {
+        const $container = $('#jalali-calendar');
+
+        if (!$container.length || !currentJalaliView) {
+            return;
+        }
+
+        const start = findJalaliMonthStart(currentJalaliView.year, currentJalaliView.month);
+
+        const nextMonthJalali =
+            currentJalaliView.month === 12
+                ? {year: currentJalaliView.year + 1, month: 1}
+                : {year: currentJalaliView.year, month: currentJalaliView.month + 1};
+
+        const daysInMonth = findJalaliMonthStart(nextMonthJalali.year, nextMonthJalali.month).diff(start, 'days');
+
+        // Saturday is the first day of the week (Jalali calendar).
+        const startWeekday = (start.day() + 1) % 7;
+
+        const monthNames = [
+            'فروردین',
+            'اردیبهشت',
+            'خرداد',
+            'تیر',
+            'مرداد',
+            'شهریور',
+            'مهر',
+            'آبان',
+            'آذر',
+            'دی',
+            'بهمن',
+            'اسفند',
+        ];
+
+        const weekdayLetters = ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج'];
+
+        let html =
+            '<div class="jc-header">' +
+            '<button type="button" class="jc-nav" data-dir="-1">&rsaquo;</button>' +
+            '<div class="jc-title">' +
+            monthNames[currentJalaliView.month - 1] +
+            ' ' +
+            currentJalaliView.year +
+            '</div>' +
+            '<button type="button" class="jc-nav" data-dir="1">&lsaquo;</button>' +
+            '</div>';
+
+        html += '<div class="jc-grid jc-weekdays">';
+
+        weekdayLetters.forEach((letter) => {
+            html += '<div>' + letter + '</div>';
+        });
+
+        html += '</div><div class="jc-grid jc-days">';
+
+        for (let i = 0; i < startWeekday; i += 1) {
+            html += '<div class="jc-empty"></div>';
+        }
+
+        const today = moment().startOf('day');
+        const maxDate = moment().add(vars('future_booking_limit'), 'days').startOf('day');
+
+        for (let day = 0; day < daysInMonth; day += 1) {
+            const dayMoment = start.clone().add(day, 'days');
+            const classes = ['jc-day'];
+
+            const isUnavailableDate = unavailableBookingDates.indexOf(dayMoment.format('YYYY-MM-DD')) !== -1;
+
+            // Special rule (only for TODAY): it can stay selectable even when it's in the unavailable list,
+            // so the user sees the "no available hours" message instead of just an unclickable day.
+            // All OTHER unavailable days keep their original behavior and remain disabled.
+            const isToday = dayMoment.isSame(moment(), 'day');
+
+            if (dayMoment.isBefore(today) || dayMoment.isAfter(maxDate) || (isUnavailableDate && !isToday)) {
+                classes.push('jc-disabled');
+            }
+
+            if (dayMoment.isSame(today, 'day')) {
+                classes.push('jc-today');
+            }
+
+            if (selectedBookingMoment && dayMoment.isSame(selectedBookingMoment, 'day')) {
+                classes.push('jc-selected');
+            }
+
+            html +=
+                '<div class="' +
+                classes.join(' ') +
+                '" data-date="' +
+                dayMoment.format('YYYY-MM-DD') +
+                '">' +
+                (day + 1) +
+                '</div>';
+        }
+
+        html += '</div>';
+
+        $container.html(html);
+    }
+
+    /**
+     * Select a date from the Jalali calendar and sync it with the booking logic.
+     *
+     * @param {Object|Date|String} date
+     */
+    function selectBookingDate(date) {
+        selectedBookingMoment = moment(date).startOf('day');
+
+        const gregorianDateInput = document.getElementById('select-date-gregorian');
+
+        if (gregorianDateInput) {
+            gregorianDateInput.value = selectedBookingMoment.format('YYYY-MM-DD');
+        }
+
+        App.Utils.UI.setDateTimePickerValue($selectDate, selectedBookingMoment.toDate());
+        App.Http.Booking.getAvailableHours(selectedBookingMoment.format('YYYY-MM-DD'));
+        App.Pages.Booking.updateConfirmFrame();
+
+        renderJalaliCalendar();
+    }
+
+    /**
+     * Initialize the inline Jalali calendar.
+     */
+    function initializeJalaliCalendar() {
+        const todayMoment = moment();
+        const todayJalali = getJalaliParts(todayMoment.toDate());
+
+        currentJalaliView = {year: todayJalali.year, month: todayJalali.month};
+        selectedBookingMoment = todayMoment.clone().startOf('day');
+
+        $('#jalali-calendar').on('click', '.jc-nav', (event) => {
+            const direction = Number($(event.currentTarget).attr('data-dir'));
+
+            if (currentJalaliView.month === 1 && direction === -1) {
+                currentJalaliView = {year: currentJalaliView.year - 1, month: 12};
+            } else if (currentJalaliView.month === 12 && direction === 1) {
+                currentJalaliView = {year: currentJalaliView.year + 1, month: 1};
+            } else {
+                currentJalaliView = {
+                    year: currentJalaliView.year,
+                    month: currentJalaliView.month + direction,
+                };
+            }
+
+            renderJalaliCalendar();
+
+            // Refresh unavailable dates for the newly displayed month so that
+            // non-working / blocked dates in NEXT months are also disabled.
+            const displayedFirstDay = findJalaliMonthStart(currentJalaliView.year, currentJalaliView.month);
+
+            App.Http.Booking.getUnavailableDates(
+                $selectProvider.val(),
+                $selectService.val(),
+                displayedFirstDay.format('YYYY-MM-DD'),
+                direction,
+            );
+        });
+
+        $('#jalali-calendar').on('click', '.jc-day:not(.jc-disabled)', (event) => {
+            selectBookingDate($(event.currentTarget).attr('data-date'));
+        });
+
+        renderJalaliCalendar();
+    }
+
+    /**
      * Initialize the module.
      */
     function initialize() {
@@ -110,6 +337,7 @@ App.Pages.Booking = (function () {
 
         App.Utils.UI.initializeDatePicker($selectDate, {
             inline: true,
+            jalaliMirror: false,
             minDate: moment().subtract(1, 'day').set({hours: 23, minutes: 59, seconds: 59}).toDate(),
             maxDate: moment().add(vars('future_booking_limit'), 'days').toDate(),
             onChange: (selectedDates) => {
@@ -168,8 +396,22 @@ App.Pages.Booking = (function () {
             },
         });
 
-        App.Utils.UI.setDateTimePickerValue($selectDate, moment().format('YYYY-MM-DD'));
+        // We only need the hidden flatpickr instance as the date store; never show its calendar.
+        App.Utils.UI.setDateTimePickerValue($selectDate, new Date());
+        $selectDate.hide();
 
+        if ($selectDate[0]?._flatpickr) {
+            $selectDate[0]._flatpickr.calendarContainer.style.display = 'none';
+            $selectDate[0]._flatpickr._rootElement?.classList.add('d-none');
+        }
+
+        const flatpickrWrapper = $selectDate.closest('.flatpickr-wrapper');
+
+        if (flatpickrWrapper.length) {
+            flatpickrWrapper.hide();
+        }
+
+        initializeJalaliCalendar();
         const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         const isTimezoneSupported = $selectTimezone.find(`option[value="${browserTimezone}"]`).length > 0;
         $selectTimezone.val(isTimezoneSupported ? browserTimezone : 'UTC');
@@ -427,7 +669,12 @@ App.Pages.Booking = (function () {
             if ($target.attr('data-step_index') === '1') {
                 const todayMoment = moment();
 
-                App.Utils.UI.setDateTimePickerValue($selectDate, todayMoment.format('YYYY-MM-DD'));
+                App.Utils.UI.setDateTimePickerValue($selectDate, todayMoment.toDate());
+
+                const todayJalali = getJalaliParts(todayMoment.toDate());
+                currentJalaliView = {year: todayJalali.year, month: todayJalali.month};
+                selectedBookingMoment = todayMoment.clone().startOf('day');
+                renderJalaliCalendar();
 
                 App.Http.Booking.getUnavailableDates(
                     $selectProvider.val(),
@@ -723,7 +970,9 @@ App.Pages.Booking = (function () {
 
         if (selectedDateObject) {
             formattedSelectedDate =
-                App.Utils.Date.format(selectedDate, vars('date_format'), vars('time_format'), false) +
+                new Intl.DateTimeFormat('fa-IR-u-ca-persian', {year: 'numeric', month: 'long', day: 'numeric'}).format(
+                    selectedDateMoment.toDate(),
+                ) +
                 ' ' +
                 selectedTime;
         }
@@ -896,6 +1145,12 @@ App.Pages.Booking = (function () {
             // Set Appointment Date
             const startMoment = moment(appointment.start_datetime);
             App.Utils.UI.setDateTimePickerValue($selectDate, startMoment.toDate());
+
+            const startJalali = getJalaliParts(startMoment.toDate());
+            currentJalaliView = {year: startJalali.year, month: startJalali.month};
+            selectedBookingMoment = startMoment.clone().startOf('day');
+            renderJalaliCalendar();
+
             App.Http.Booking.getAvailableHours(startMoment.format('YYYY-MM-DD'));
 
             // Update unavailable dates while in manage mode
@@ -1133,5 +1388,6 @@ App.Pages.Booking = (function () {
         updateConfirmFrame,
         updateServiceDescription,
         validateCustomerForm,
+        setUnavailableDates,
     };
 })();

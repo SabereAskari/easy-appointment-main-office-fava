@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/themes/' . vars('theme') . '.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/general.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/frontend.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/vendor/jalalidatepicker/jalalidatepicker.min.css') ?>">
 
     <?php component('company_color_style', ['company_color' => vars('company_color')]); ?>
 
@@ -78,6 +79,7 @@
 <script src="<?= asset_url('assets/vendor/@fortawesome-fontawesome-free/solid.min.js') ?>"></script>
 <script src="<?= asset_url('assets/vendor/tippy.js/tippy-bundle.umd.min.js') ?>"></script>
 <script src="<?= asset_url('assets/vendor/flatpickr/flatpickr.min.js') ?>"></script>
+<script src="<?= asset_url('assets/vendor/jalalidatepicker/jalalidatepicker.min.js') ?>"></script>
 
 <script src="<?= asset_url('assets/js/app.js') ?>"></script>
 <script src="<?= asset_url('assets/js/utils/date.js') ?>"></script>
