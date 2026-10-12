@@ -168,7 +168,7 @@ App.Pages.Booking = (function () {
             },
         });
 
-        App.Utils.UI.setDateTimePickerValue($selectDate, new Date());
+        App.Utils.UI.setDateTimePickerValue($selectDate, moment().format('YYYY-MM-DD'));
 
         const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         const isTimezoneSupported = $selectTimezone.find(`option[value="${browserTimezone}"]`).length > 0;
@@ -427,7 +427,7 @@ App.Pages.Booking = (function () {
             if ($target.attr('data-step_index') === '1') {
                 const todayMoment = moment();
 
-                App.Utils.UI.setDateTimePickerValue($selectDate, todayMoment.toDate());
+                App.Utils.UI.setDateTimePickerValue($selectDate, todayMoment.format('YYYY-MM-DD'));
 
                 App.Http.Booking.getUnavailableDates(
                     $selectProvider.val(),
