@@ -149,6 +149,8 @@ window.App.Utils.UI = (function () {
      * @param {Object} [params]
      */
     function initializeDateTimePicker($target, params = {}) {
+        const {jalaliMirror, ...flatpickrParams} = params;
+
         $target.flatpickr({
             enableTime: true,
             allowInput: true,
@@ -156,8 +158,12 @@ window.App.Utils.UI = (function () {
             dateFormat: `${getDateFormat()} ${getTimeFormat()}`,
             time_24hr: vars('time_format') === 'military',
             locale: getFlatpickrLocale(),
-            ...params,
+            ...flatpickrParams,
         });
+
+        if (jalaliMirror !== false) {
+            attachJalaliMirror($target, true);
+        }
     }
 
     /**
@@ -169,13 +175,19 @@ window.App.Utils.UI = (function () {
      * @param {Object} [params]
      */
     function initializeDatePicker($target, params = {}) {
+        const {jalaliMirror, ...flatpickrParams} = params;
+
         $target.flatpickr({
             allowInput: true,
             dateFormat: getDateFormat(),
             locale: getFlatpickrLocale(),
             static: true,
-            ...params,
+            ...flatpickrParams,
         });
+
+        if (jalaliMirror !== false) {
+            attachJalaliMirror($target, false);
+        }
     }
 
     /**
@@ -249,7 +261,143 @@ window.App.Utils.UI = (function () {
             throw new Error('Empty $target argument provided.');
         }
 
-        return $target[0]._flatpickr.setDate(value);
+        const result = $target[0]._flatpickr.setDate(value);
+
+        const mirror = $target[0]._jalaliMirror;
+
+        if (mirror && value) {
+            mirror.value = formatJalaliInputValue(value, $target[0]._jalaliIncludeTime);
+        }
+
+        return result;
+    }
+
+    /**
+     * Format a Date as the Jalali input value used by the mirror (e.g. "1405/07/12 14:00").
+     *
+     * @param {Date} date
+     * @param {Boolean} withTime
+     *
+     * @return {String}
+     */
+    function formatJalaliInputValue(date, withTime) {
+        const parts = new Intl.DateTimeFormat('en-u-ca-persian', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+        }).formatToParts(date);
+
+        const get = (type) => parts.find((part) => part.type === type).value;
+
+        const datePart = `${get('year')}/${get('month')}/${get('day')}`;
+
+        if (!withTime) {
+            return datePart;
+        }
+
+        const momentDate = moment(date);
+
+        return `${datePart} ${momentDate.format('HH:mm')}`;
+    }
+
+    /**
+     * Attach a Jalali mirror input to a flatpickr-decorated input so that the
+     * user interacts with a Jalali calendar; the hidden flatpickr input keeps
+     * the Gregorian value that the backend logic relies on.
+     *
+     * @param {jQuery} $target
+     * @param {Boolean} withTime
+     */
+    function attachJalaliMirror($target, withTime) {
+        if (!window.jalaliDatepicker || !$target?.length) {
+            return;
+        }
+
+        $target.each((index, input) => {
+            if (input._jalaliMirror) {
+                return;
+            }
+
+            const $input = $(input);
+            const id = input.id || `dp-${Math.random().toString(36).slice(2, 8)}`;
+
+            if (!input.id) {
+                input.id = id;
+            }
+
+            // Prevent the native Gregorian flatpickr popup from opening on click.
+            if (input._flatpickr) {
+                input._flatpickr.set('clickOpens', false);
+            }
+
+            const hidden = document.createElement('input');
+            hidden.type = 'hidden';
+            hidden.id = `${id}-jalali-gregorian`;
+            hidden.setAttribute('data-jalali-gregorian-target', '');
+            input.parentNode.insertBefore(hidden, input);
+
+            const mirror = input.cloneNode(false);
+            mirror.type = 'text';
+            mirror.id = `${id}-jalali`;
+            mirror.name = `${input.name || id}-jalali`;
+            mirror.value = '';
+            mirror.removeAttribute('readonly');
+            mirror.removeAttribute('data-jdp');
+
+            mirror.setAttribute('data-jalali', '');
+            mirror.setAttribute('data-jdp-target-value-input', `#${hidden.id}`);
+            mirror.setAttribute('data-jdp-target-value-type', 'gregorian');
+
+            if (!withTime) {
+                mirror.setAttribute('data-jdp-only-date', '');
+            }
+
+            input.parentNode.insertBefore(mirror, input);
+            $input.hide();
+
+            input._jalaliMirror = mirror;
+            input._jalaliIncludeTime = withTime;
+
+            // Seed the global jalaliDatepicker options once (high z-index so it
+            // appears above modals). The selector is still set so the default
+            // focusin-based opening works; per-input target comes from the
+            // mirror's own data-jdp-* attributes.
+            if (!window._jalaliPickerWatcherStarted) {
+                window._jalaliPickerWatcherStarted = true;
+                jalaliDatepicker.startWatch({selector: 'input[data-jalali]', zIndex: 2000, date: true, time: true});
+            }
+
+            // Open the Jalali calendar panel when this mirror input is focused or clicked.
+            const openJalaliPanel = () => jalaliDatepicker.show(mirror);
+
+            mirror.addEventListener('focus', openJalaliPanel);
+            mirror.addEventListener('click', openJalaliPanel);
+
+            mirror.addEventListener('change', () => {
+                // jalalidatepicker writes the target (gregorian) value AFTER the
+                // change event dispatch finishes, so read it on the next tick.
+                setTimeout(() => {
+                    const gregorian = hidden.value;
+
+                    if (!gregorian || !input._flatpickr) {
+                        return;
+                    }
+
+                    const parsed = moment(gregorian, ['YYYY-MM-DD HH:mm', 'YYYY-MM-DD'], true);
+
+                    if (parsed.isValid()) {
+                        input._flatpickr.setDate(parsed.toDate(), true);
+                    }
+                }, 10);
+            });
+
+            // Mirror the initial flatpickr value, if any.
+            const initial = $input.val();
+
+            if (initial && input._flatpickr?.selectedDates?.length) {
+                mirror.value = formatJalaliInputValue(input._flatpickr.selectedDates[0], withTime);
+            }
+        });
     }
 
     return {

@@ -911,7 +911,16 @@ App.Utils.CalendarDefaultView = (function () {
                     ? appointment.service.name
                     : [appointment.provider.first_name, appointment.provider.last_name].filter(Boolean).join(' ');
 
-            const title = customerName ? customerName + ' - ' + type : appointment.service.name;
+            let title = customerName ? customerName + ' - ' + type : appointment.service.name;
+
+            // Add custom fields (e.g., company name) to the calendar block title
+            const customFields = ['custom_field_1', 'custom_field_2', 'custom_field_3', 'custom_field_4', 'custom_field_5']
+                .map((field) => appointment.customer?.[field])
+                .filter(Boolean);
+
+            if (customFields.length) {
+                title += ' - ' + customFields.join(', ');
+            }
 
             return {
                 id: appointment.id,

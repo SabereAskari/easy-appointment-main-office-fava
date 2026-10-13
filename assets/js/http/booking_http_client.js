@@ -373,14 +373,28 @@ App.Http.Booking = (function () {
             unavailableDates.map((unavailableDate) => new Date(unavailableDate + 'T00:00')),
         );
 
-        if (setDate && !vars('manage_mode')) {
-            for (let i = 1; i <= numberOfDays; i++) {
-                const currentDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), i);
+        if (App.Pages.Booking.setUnavailableDates) {
+            App.Pages.Booking.setUnavailableDates(unavailableDates);
+        }
 
-                if (unavailableDates.indexOf(moment(currentDate).format('YYYY-MM-DD')) === -1) {
-                    App.Utils.UI.setDateTimePickerValue($selectDate, currentDate);
-                    getAvailableHours(moment(currentDate).format('YYYY-MM-DD'));
-                    break;
+        if (setDate && !vars('manage_mode')) {
+            // If the user is looking at TODAY and today is blocked/unavailable, keep
+            // today as the selected date (it remains selectable) but do NOT auto-select
+            // another day. The result will be the "no available hours" message.
+            const isTodaySelected = selectedDateString === moment().format('YYYY-MM-DD');
+            const isTodayUnavailable = unavailableDates.indexOf(selectedDateString) !== -1;
+
+            if (isTodaySelected && isTodayUnavailable) {
+                getAvailableHours(selectedDateString);
+            } else {
+                for (let i = 1; i <= numberOfDays; i++) {
+                    const currentDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), i);
+
+                    if (unavailableDates.indexOf(moment(currentDate).format('YYYY-MM-DD')) === -1) {
+                        App.Utils.UI.setDateTimePickerValue($selectDate, currentDate);
+                        getAvailableHours(moment(currentDate).format('YYYY-MM-DD'));
+                        break;
+                    }
                 }
             }
         }
