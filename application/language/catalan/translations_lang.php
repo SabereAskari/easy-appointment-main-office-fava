@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+?php defined('BASEPATH') or exit('No direct script access allowed');
 // Catalan
 $lang['page_title'] = 'Reserva una cita amb';
 $lang['service_and_provider'] = 'Selecció del servei i el proveïdor';

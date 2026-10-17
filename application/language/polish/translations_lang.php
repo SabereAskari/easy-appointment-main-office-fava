@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+?php defined('BASEPATH') or exit('No direct script access allowed');
 // Polish
 $lang['page_title'] = 'Zamów wizytę';
 $lang['service_and_provider'] = 'Wybierz Zabieg i Personel';

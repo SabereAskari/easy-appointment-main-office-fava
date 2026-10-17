@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+?php defined('BASEPATH') or exit('No direct script access allowed');
 // Latvian
 $lang['page_title'] = 'Aizsirašyti satikšanu ar';
 $lang['service_and_provider'] = 'Pakalpoja ir piegādātājs';

@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+?php defined('BASEPATH') or exit('No direct script access allowed');
 // Russian
 $lang['page_title'] = 'Заказ оформлен с';
 $lang['service_and_provider'] = 'Выберите услугу и поставщика';

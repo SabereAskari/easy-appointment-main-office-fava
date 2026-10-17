@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+?php defined('BASEPATH') or exit('No direct script access allowed');
 // Estonian
 $lang['page_title'] = 'Broneeri aeg';
 $lang['service_and_provider'] = 'Vali teenus ja isik';

@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+?php defined('BASEPATH') or exit('No direct script access allowed');
 // Croatian
 $lang['page_title'] = 'Zakažite sastanak s';
 $lang['service_and_provider'] = 'Usluga & Pružatelj';

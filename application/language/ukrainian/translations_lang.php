@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+?php defined('BASEPATH') or exit('No direct script access allowed');
 // Ukrainian
 $lang['page_title'] = 'Запис на прийом з';
 $lang['service_and_provider'] = 'Послуга та Провайдер';

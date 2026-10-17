@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+?php defined('BASEPATH') or exit('No direct script access allowed');
 // Chinese
 $lang['page_title'] = '准备预约';
 $lang['service_and_provider'] = '选择服务人员以及服务项目';

@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+?php defined('BASEPATH') or exit('No direct script access allowed');
 // Shqip
 $lang['page_title'] = 'Rezervoni Takim Me';
 $lang['service_and_provider'] = 'Shërbimi & Ofruesi';

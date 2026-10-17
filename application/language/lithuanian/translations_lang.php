@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+?php defined('BASEPATH') or exit('No direct script access allowed');
 // Lithuanian
 $lang['page_title'] = 'Registravimasis vizitui – ';
 $lang['service_and_provider'] = 'Paslauga ir paslaugos teikėjas';

@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+?php defined('BASEPATH') or exit('No direct script access allowed');
 // Bosnian
 $lang['page_title'] = 'Zakažite termin sa';
 $lang['service_and_provider'] = 'Usluga i dobavljač';

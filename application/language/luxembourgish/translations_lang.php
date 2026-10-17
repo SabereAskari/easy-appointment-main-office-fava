@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+?php defined('BASEPATH') or exit('No direct script access allowed');
 // Luxembourgish
 $lang['page_title'] = 'Huelt ee Termäin mat';
 $lang['service_and_provider'] = 'Auswiel vun der Dingschtleeschtung an dem Mataarbechter';

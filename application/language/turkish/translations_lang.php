@@ -1,4 +1,4 @@
-﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
+?php defined('BASEPATH') or exit('No direct script access allowed');
 // Turkish
 $lang['page_title'] = 'Randevu Alınacak Kişi';
 $lang['service_and_provider'] = 'Hizmet ve Hizmet Sağlayıcıyı Seçin';
