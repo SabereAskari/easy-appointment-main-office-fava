@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // English
 $lang['page_title'] = 'Book Appointment With';
 $lang['service_and_provider'] = 'Service & Provider';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Appointment Date & Time';
 $lang['no_available_hours'] = 'There are no available appointment hours for the selected date. Please choose another date.';
 $lang['appointment_hour_missing'] = 'Please select an appointment hour before continuing.';
 $lang['customer_information'] = 'Customer Information';
-$lang['first_name'] = 'First Name';
-$lang['last_name'] = 'Last Name';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'Email';
 $lang['phone_number'] = 'Phone Number';
 $lang['phone'] = 'Phone';

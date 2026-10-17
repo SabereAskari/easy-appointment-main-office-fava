@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Portuguese BR
 $lang['page_title'] = 'Agendar horário';
 $lang['service_and_provider'] = 'Selecione o serviço e o atendente';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Selecione a data e a hora do agendamento';
 $lang['no_available_hours'] = 'Não existem horários disponíveis para a data selecionada. Por favor, selecione outra data.';
 $lang['appointment_hour_missing'] = 'Por favor, selecione um horário antes de continuar.';
 $lang['customer_information'] = 'Preencha as suas informações';
-$lang['first_name'] = 'Primeiro nome';
-$lang['last_name'] = 'Ultimo nome';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-mail';
 $lang['phone_number'] = 'Telefone';
 $lang['phone'] = 'Telefone';

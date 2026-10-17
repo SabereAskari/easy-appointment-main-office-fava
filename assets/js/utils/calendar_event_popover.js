@@ -254,6 +254,33 @@ App.Utils.CalendarEventPopover = (function () {
     }
 
     /**
+     * Get popover rows for customer custom fields (e.g., company name).
+     *
+     * @param {Object} customer - Customer data object.
+     * @returns {Array} Array of jQuery elements for popover rows.
+     */
+    function getCustomFieldRows(customer) {
+        const customFieldLabels = vars('custom_field_labels') || {};
+        const rows = [];
+
+        for (let i = 1; i <= 5; i++) {
+            const fieldName = 'custom_field_' + i;
+            const value = customer[fieldName];
+
+            if (value) {
+                const label = customFieldLabels[fieldName] || ('Custom Field #' + i);
+                rows.push(
+                    $('<strong/>', {class: 'd-inline-block me-2', text: label}),
+                    $('<span/>', {class: 'd-inline-block', text: value}),
+                    $('<br/>')
+                );
+            }
+        }
+
+        return rows;
+    }
+
+    /**
      * Build popover content for appointment events.
      *
      * @param {Object} info - FullCalendar event info.
@@ -265,7 +292,7 @@ App.Utils.CalendarEventPopover = (function () {
         const data = info.event.extendedProps.data;
         const customer = data.customer;
         const provider = data.provider;
-        const customerName = [customer.first_name, customer.last_name].filter(Boolean).join(' ') || '-';
+        const customerName = customer.first_name || [customer.first_name, customer.last_name].filter(Boolean).join(' ') || '-';
         const meetingLinkElements = data.meeting_link
             ? [
                   $('<strong/>', {class: 'd-inline-block me-2', text: lang('meeting_link')}),
@@ -296,6 +323,7 @@ App.Utils.CalendarEventPopover = (function () {
                 renderPhoneIcon(customer.phone_number),
                 $('<span/>', {class: 'd-inline-block', text: customer.phone_number || '-'}),
                 $('<br/>'),
+                ...getCustomFieldRows(customer),
                 ...meetingLinkElements,
                 ...createPopoverRow('notes', getEventNotes(info.event)),
                 renderCustomContent(info),

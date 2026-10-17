@@ -869,7 +869,7 @@ App.Utils.CalendarTableView = (function () {
                 return !filterServiceIds.length || filterServiceIds.includes(appointment.id_services);
             })
             .map((appointment) => {
-                const customerName = [appointment.customer.first_name, appointment.customer.last_name]
+                const customerName = appointment.customer.first_name || [appointment.customer.first_name, appointment.customer.last_name]
                     .filter(Boolean)
                     .join(' ');
 

@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Turkish
 $lang['page_title'] = 'Randevu Alınacak Kişi';
 $lang['service_and_provider'] = 'Hizmet ve Hizmet Sağlayıcıyı Seçin';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Randevu Tarihini ve Zamanını Seçin';
 $lang['no_available_hours'] = 'Seçilen tarih için uygun saat bulunmuyor. Lütfen başka bir tarih seçin. ';
 $lang['appointment_hour_missing'] = 'Lütfen devam etmeden önce bir randevu saati seçin.';
 $lang['customer_information'] = 'Bilgilerinizi Girin';
-$lang['first_name'] = 'Ad';
-$lang['last_name'] = 'Soyad';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-posta';
 $lang['phone_number'] = 'Telefon No';
 $lang['phone'] = 'Telefon';

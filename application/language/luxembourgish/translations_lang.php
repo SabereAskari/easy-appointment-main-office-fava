@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Luxembourgish
 $lang['page_title'] = 'Huelt ee Termäin mat';
 $lang['service_and_provider'] = 'Auswiel vun der Dingschtleeschtung an dem Mataarbechter';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Auswiel vum Datum an der Auerzäit vum Ter
 $lang['no_available_hours'] = 'Et gëtt leider kee fräie Termäin méi fir deen ausgewielten Dag. Wielt w.e.g. en aner Dag aus.';
 $lang['appointment_hour_missing'] = 'Wielt w.e.g. ee Termäin iert Der weider maacht.';
 $lang['customer_information'] = 'Gitt w.e.g. Är perséinlech Donnéeën an';
-$lang['first_name'] = 'Virnumm';
-$lang['last_name'] = 'Familljennumm';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-Mail';
 $lang['phone_number'] = 'Telefonsnummer';
 $lang['phone'] = 'Telefon';

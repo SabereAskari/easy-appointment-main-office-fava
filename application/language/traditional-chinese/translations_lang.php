@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // English
 $lang['page_title'] = '預約';
 $lang['service_and_provider'] = '服務與提供者';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = '預約日期與時間';
 $lang['no_available_hours'] = '所選日期沒有可用的預約時間。請選擇其他日期。';
 $lang['appointment_hour_missing'] = '請選擇預約時間後再繼續。';
 $lang['customer_information'] = '顧客資訊';
-$lang['first_name'] = '名字';
-$lang['last_name'] = '姓氏';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = '電子郵件';
 $lang['phone_number'] = '電話號碼';
 $lang['phone'] = '電話';

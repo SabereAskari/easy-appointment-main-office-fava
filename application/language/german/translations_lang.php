@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // German
 $lang['page_title'] = 'Vereinbaren Sie einen Termin mit';
 $lang['service_and_provider'] = 'Dienstleistung & Anbieter';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Datum & Uhrzeit des Termins';
 $lang['no_available_hours'] = 'Es gibt leider keine freien Termine für das ausgewählte Datum. Bitte wählen Sie ein anderes Datum.';
 $lang['appointment_hour_missing'] = 'Bitte wählen Sie einen Termin aus bevor Sie fortfahren.';
 $lang['customer_information'] = 'Kundeninformationen';
-$lang['first_name'] = 'Vorname';
-$lang['last_name'] = 'Nachname';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-Mail';
 $lang['phone_number'] = 'Telefonnummer';
 $lang['phone'] = 'Telefon';

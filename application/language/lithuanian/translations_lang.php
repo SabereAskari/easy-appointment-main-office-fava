@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Lithuanian
 $lang['page_title'] = 'Registravimasis vizitui – ';
 $lang['service_and_provider'] = 'Paslauga ir paslaugos teikėjas';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Vizito data ir laikas';
 $lang['no_available_hours'] = 'Pasirinktą dieną nėra laisvų vizitų laikų. Pasirinkite kitą dieną.';
 $lang['appointment_hour_missing'] = 'Prieš tęsdami pasirinkite vizito laiką.';
 $lang['customer_information'] = 'Kliento duomenys';
-$lang['first_name'] = 'Vardas';
-$lang['last_name'] = 'Pavardė';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'El. paštas';
 $lang['phone_number'] = 'Telefono numeris';
 $lang['phone'] = 'Telefonas';

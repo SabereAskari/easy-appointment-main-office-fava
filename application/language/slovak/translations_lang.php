@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Slovak
 $lang['page_title'] = 'Rezervácie';
 $lang['service_and_provider'] = 'Vyberte si službu a pracovníka';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Zvoľte si dátum a čas rezervácie';
 $lang['no_available_hours'] = 'Čas pre vybraný dátum nieje k dispozícii. Prosím, vyberte si iný termín.';
 $lang['appointment_hour_missing'] = 'Prosím, vyberte si hodinu pred pokračovaním.';
 $lang['customer_information'] = 'Vyplňte svoje údaje';
-$lang['first_name'] = 'Meno';
-$lang['last_name'] = 'Priezvisko';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-mail';
 $lang['phone_number'] = 'Telefónne číslo';
 $lang['phone'] = 'Telefón';

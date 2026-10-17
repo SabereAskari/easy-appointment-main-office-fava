@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Portuguese
 $lang['page_title'] = 'Livro de Apontamentos';
 $lang['service_and_provider'] = 'Selecione o serviço e o fornecedor';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Selecione a data e hora do evento';
 $lang['no_available_hours'] = 'Não existem eventos para a data selecionada, Por favor, selecione outra data.';
 $lang['appointment_hour_missing'] = 'Por favor, selecione a hora do evento antes de continuar.';
 $lang['customer_information'] = 'Preencha as suas informações';
-$lang['first_name'] = 'Primeiro Nome';
-$lang['last_name'] = 'Último Nome';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-mail';
 $lang['phone_number'] = 'Número de Telemóvel';
 $lang['phone'] = 'Telefone';

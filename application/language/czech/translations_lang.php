@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Czech
 $lang['page_title'] = 'Rezervace schůzky s';
 $lang['service_and_provider'] = 'Výběr služby a poskytovatele';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Výběr data a času schůzky';
 $lang['no_available_hours'] = 'V rámci zvoleného data nejsou k dispozici žádné termíny pro rezervaci schůzky. Zvolte prosím jiné datum.';
 $lang['appointment_hour_missing'] = 'Než budete pokračovat, zvolte prosím termín schůzky.';
 $lang['customer_information'] = 'Zadání vašich údajů';
-$lang['first_name'] = 'Jméno';
-$lang['last_name'] = 'Příjmení';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-mail';
 $lang['phone_number'] = 'Telefonní číslo';
 $lang['phone'] = 'Telefon';

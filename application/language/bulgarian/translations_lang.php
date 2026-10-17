@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Bulgarian
 $lang['page_title'] = 'Запазете час с ...';
 $lang['service_and_provider'] = 'Изберете Услуга и Изпълнител';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Изберете дата и час';
 $lang['no_available_hours'] = 'Не са налични свободни часове за избраната дата. Моля изберете друга дата.';
 $lang['appointment_hour_missing'] = 'Моля изберете час преди да продължите.';
 $lang['customer_information'] = 'Моля попълнете Вашите данни';
-$lang['first_name'] = 'Име';
-$lang['last_name'] = 'Фамилия';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'Имейл';
 $lang['phone_number'] = 'Телефонен номер';
 $lang['phone'] = 'Телефон';

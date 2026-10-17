@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Norwegian
 $lang['page_title'] = 'Bestill avtale med';
 $lang['service_and_provider'] = 'Tjeneste & Leverandør';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Avtaledato & Tid';
 $lang['no_available_hours'] = 'Det er ingen tilgjengelige avtaletimer for den valgte datoen. Vennligst velg en annen dato.';
 $lang['appointment_hour_missing'] = 'Vennligst velg en avtaletid før du fortsetter.';
 $lang['customer_information'] = 'Kundeinformasjon';
-$lang['first_name'] = 'Fornavn';
-$lang['last_name'] = 'Etternavn';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-post';
 $lang['phone_number'] = 'Telefonnummer';
 $lang['phone'] = 'Telefon';

@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Spanish
 $lang['page_title'] = 'Agendar una cita con';
 $lang['service_and_provider'] = 'Seleccione Servicio y Proveedor';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Seleccione fecha y hora de cita';
 $lang['no_available_hours'] = 'No hay horarios disponibles para una cita en la fecha seleccionada. Por favor, elija otra fecha.';
 $lang['appointment_hour_missing'] = 'Por favor, seleccione un horario para la cita antes de continuar.';
 $lang['customer_information'] = 'Ingrese su información';
-$lang['first_name'] = 'Nombre';
-$lang['last_name'] = 'Apellido';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'Correo electrónico';
 $lang['phone_number'] = 'Número de teléfono';
 $lang['phone'] = 'Teléfono';

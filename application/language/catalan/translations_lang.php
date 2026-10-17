@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Catalan
 $lang['page_title'] = 'Reserva una cita amb';
 $lang['service_and_provider'] = 'Selecció del servei i el proveïdor';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Selecció de la data i l\'hora de la cita'
 $lang['no_available_hours'] = 'No hi ha hores disponibles per a la data seleccionada. Seleccioneu una altra data.';
 $lang['appointment_hour_missing'] = 'Seleccioneu-ne una altra abans de continuar.';
 $lang['customer_information'] = 'Introducció de dades personals';
-$lang['first_name'] = 'Nom';
-$lang['last_name'] = 'Cognoms';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'Correu electrònic';
 $lang['phone_number'] = 'Número de telèfon';
 $lang['phone'] = 'Telèfon';

@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Danish
 $lang['page_title'] = 'Book tid ved ...';
 $lang['service_and_provider'] = 'Vælg tjeneste og leverandør';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Vælg dato og tid';
 $lang['no_available_hours'] = 'Der er ingen ledig tid på den valgte dato.';
 $lang['appointment_hour_missing'] = 'Vælg en tid før du kan fortsætte.';
 $lang['customer_information'] = 'Udfyld informationer';
-$lang['first_name'] = 'Fornavn';
-$lang['last_name'] = 'Efternavn';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-mail';
 $lang['phone_number'] = 'Telefonnummer';
 $lang['phone'] = 'Telefon';

@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Arabic
 $lang['page_title'] = 'احجز موعد مع';
 $lang['service_and_provider'] = 'اختر الخدمة والمزود';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'اختر وقت وتاريخ الموعد'
 $lang['no_available_hours'] = 'لا يوجد مواعيد متاحة في الوقت الذي تم إختياره الرجاء اختيار وقت آخر';
 $lang['appointment_hour_missing'] = 'الرجاء اختيار ساعة الموعد قبل الإكمال';
 $lang['customer_information'] = 'معلومات العميل';
-$lang['first_name'] = 'الاسم الأول';
-$lang['last_name'] = 'العائلة';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'البريد الإلكتروني';
 $lang['phone_number'] = 'رقم الجوال';
 $lang['phone'] = 'هاتف';

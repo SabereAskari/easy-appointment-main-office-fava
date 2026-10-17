@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Swedish
 $lang['page_title'] = 'Boka tid med ...';
 $lang['service_and_provider'] = 'Välj tjänst och utförare';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Välj datum och tid';
 $lang['no_available_hours'] = 'Det finns inga lediga tider det här datumet';
 $lang['appointment_hour_missing'] = 'Välj en tid för att fortsätta';
 $lang['customer_information'] = 'Fyll i din information';
-$lang['first_name'] = 'Förnamn';
-$lang['last_name'] = 'Efternamn';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-post';
 $lang['phone_number'] = 'Telefonnummer';
 $lang['phone'] = 'Telefon';

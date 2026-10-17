@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Bosnian
 $lang['page_title'] = 'Zakažite termin sa';
 $lang['service_and_provider'] = 'Usluga i dobavljač';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Datum i vrijeme sastanka';
 $lang['no_available_hours'] = 'Nema raspoloživih sati za termine za odabrani datum. Molimo odaberite drugi datum.';
 $lang['appointment_hour_missing'] = 'Molimo odaberite sat za termin prije nego što nastavite.';
 $lang['customer_information'] = 'Informacije o klijentu';
-$lang['first_name'] = 'Ime';
-$lang['last_name'] = 'Prezime';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-mail';
 $lang['phone_number'] = 'Broj telefona';
 $lang['phone'] = 'Telefon';

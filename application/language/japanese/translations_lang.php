@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Japanese
 $lang['page_title'] = '予約システム - ';
 $lang['service_and_provider'] = 'メニューと担当者の選択:';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = '日時の選択';
 $lang['no_available_hours'] = '選択された日に空席がありません。別の日を選択してください。';
 $lang['appointment_hour_missing'] = '次に行く前に予約時間を選択してください。';
 $lang['customer_information'] = 'お客様のご連絡先';
-$lang['first_name'] = '名前';
-$lang['last_name'] = '名字';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'メール';
 $lang['phone_number'] = '電話番号';
 $lang['phone'] = '電話';

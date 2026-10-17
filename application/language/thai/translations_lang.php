@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Thai
 $lang['page_title'] = 'จองการนัดหมายกับ';
 $lang['service_and_provider'] = 'บริการและผู้ให้บริการ';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'วันที่และเวลาน
 $lang['no_available_hours'] = 'ไม่มีเวลานัดหมายสำหรับวันที่เลือก โปรดเลือกวันอื่น';
 $lang['appointment_hour_missing'] = 'โปรดเลือกเวลานัดหมายก่อนดำเนินการต่อ';
 $lang['customer_information'] = 'ข้อมูลลูกค้า';
-$lang['first_name'] = 'ชื่อจริง';
-$lang['last_name'] = 'นามสกุล';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'อีเมล';
 $lang['phone_number'] = 'หมายเลขโทรศัพท์';
 $lang['phone'] = 'โทรศัพท์';

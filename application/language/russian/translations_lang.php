@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Russian
 $lang['page_title'] = 'Заказ оформлен с';
 $lang['service_and_provider'] = 'Выберите услугу и поставщика';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Выбор даты и времени за
 $lang['no_available_hours'] = 'Нет доступного времени назначения на выбранной дате. Пожвлуйста выберите другую дату.';
 $lang['appointment_hour_missing'] = 'Пожалуйста выберите час назначения и продолжите.';
 $lang['customer_information'] = 'Заполните информацию о себе';
-$lang['first_name'] = 'Имя';
-$lang['last_name'] = 'Фамилия';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'Эл. почта';
 $lang['phone_number'] = 'Номер телефона';
 $lang['phone'] = 'Телефон';

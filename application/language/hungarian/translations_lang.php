@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Hungarian
 $lang['page_title'] = 'Foglalj időpontot a ...';
 $lang['service_and_provider'] = 'Válassz szolgáltatást és szolgáltatót';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Válaszd ki az időpont dátumát és idej
 $lang['no_available_hours'] = 'A kiválasztott napon nincsen szabad időpont. Kérlek válassz másik dátumot.';
 $lang['appointment_hour_missing'] = 'Válassz egy időpontot mielőtt folytatnád.';
 $lang['customer_information'] = 'Töltsd ki az adataidat.';
-$lang['first_name'] = 'Keresztnév';
-$lang['last_name'] = 'Vezetéknév';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-mail';
 $lang['phone_number'] = 'Telefon';
 $lang['phone'] = 'Telefon';

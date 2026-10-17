@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Estonian
 $lang['page_title'] = 'Broneeri aeg';
 $lang['service_and_provider'] = 'Vali teenus ja isik';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Vali päev ja aeg';
 $lang['no_available_hours'] = 'Valitud päev ja aeg pole saadaval';
 $lang['appointment_hour_missing'] = 'Enne jätkamist, vali aeg';
 $lang['customer_information'] = 'Sisesta andmed';
-$lang['first_name'] = 'Eesnimi';
-$lang['last_name'] = 'Perekonnanimi';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-post';
 $lang['phone_number'] = 'Tel number';
 $lang['phone'] = 'Telefon';

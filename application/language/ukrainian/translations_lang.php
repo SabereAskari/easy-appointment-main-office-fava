@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Ukrainian
 $lang['page_title'] = 'Запис на прийом з';
 $lang['service_and_provider'] = 'Послуга та Провайдер';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Дата та час прийому';
 $lang['no_available_hours'] = 'Немає доступних годин для обраної дати. Будь ласка, виберіть іншу дату.';
 $lang['appointment_hour_missing'] = 'Будь ласка, виберіть час прийому перед продовженням.';
 $lang['customer_information'] = 'Інформація про клієнта';
-$lang['first_name'] = 'Ім\'я';
-$lang['last_name'] = 'Прізвище';
+$lang['first_name'] = '??? ????'я';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'Ел. пошта';
 $lang['phone_number'] = 'Номер телефону';
 $lang['phone'] = 'Телефон';

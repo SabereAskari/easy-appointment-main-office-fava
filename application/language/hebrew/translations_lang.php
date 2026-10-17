@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Hebrew
 $lang['page_title'] = 'קבע פגישה עם';
 $lang['service_and_provider'] = 'בחירת שירות וספק';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'בחרו תאריך ושעה לפגישה'
 $lang['no_available_hours'] = 'אין שעות פגישה זמינות לתאריך שנבחר. אנא בחר תאריך אחר.';
 $lang['appointment_hour_missing'] = 'יש לבחור פגישה לפני המשך רישום!';
 $lang['customer_information'] = 'מלאו את הפרטים שלכם';
-$lang['first_name'] = 'שם פרטי';
-$lang['last_name'] = 'שם משפחה';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'אימייל';
 $lang['phone_number'] = 'מספר טלפון';
 $lang['phone'] = 'טלפון';

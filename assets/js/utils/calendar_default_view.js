@@ -902,7 +902,7 @@ App.Utils.CalendarDefaultView = (function () {
      */
     function createAppointmentEvents(appointments) {
         return appointments.map((appointment) => {
-            const customerName = [appointment.customer.first_name, appointment.customer.last_name]
+            const customerName = appointment.customer.first_name || [appointment.customer.first_name, appointment.customer.last_name]
                 .filter(Boolean)
                 .join(' ');
 

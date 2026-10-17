@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Chinese
 $lang['page_title'] = '准备预约';
 $lang['service_and_provider'] = '选择服务人员以及服务项目';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = '选择预约的日期和时间';
 $lang['no_available_hours'] = '您所选择的日期和时间没有空位。请选择其他日期.';
 $lang['appointment_hour_missing'] = '继续之前请选择您的预约时间.';
 $lang['customer_information'] = '填写您的信息';
-$lang['first_name'] = '名字';
-$lang['last_name'] = '姓氏';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = '电子邮件';
 $lang['phone_number'] = '电话号码';
 $lang['phone'] = '电话';

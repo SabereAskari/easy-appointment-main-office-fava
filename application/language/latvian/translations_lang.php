@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Latvian
 $lang['page_title'] = 'Aizsirašyti satikšanu ar';
 $lang['service_and_provider'] = 'Pakalpoja ir piegādātājs';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Tikšanās datums un laiks';
 $lang['no_available_hours'] = 'Pasirinktai datai nav brīvas tikšanās stundas. Prašām izvēlēties citu datumu.';
 $lang['appointment_hour_missing'] = 'Prašām izvēlēties tikšanās stundu pirms tęsiant.';
 $lang['customer_information'] = 'Kliento informācija';
-$lang['first_name'] = 'Vardas';
-$lang['last_name'] = 'Pavardė';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-pasts';
 $lang['phone_number'] = 'Telefona numurs';
 $lang['phone'] = 'Tālrunis';

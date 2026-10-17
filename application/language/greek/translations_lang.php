@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Greek
 $lang['page_title'] = 'Κράτηση Ραντεβού Με';
 $lang['service_and_provider'] = 'Υπηρεσία & Πάροχος';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Ημερομηνία & Ώρα Ραντεβ
 $lang['no_available_hours'] = 'Δεν υπάρχουν διαθέσιμες ώρες ραντεβού για την επιλεγμένη ημερομηνία. Παρακαλώ επιλέξτε άλλη ημερομηνία.';
 $lang['appointment_hour_missing'] = 'Παρακαλώ επιλέξτε μια ημερομηνία ραντεβού πριν συνεχίσετε.';
 $lang['customer_information'] = 'Πληροφορίες Πελάτη';
-$lang['first_name'] = 'Όνομα';
-$lang['last_name'] = 'Επώνυμο';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'Email';
 $lang['phone_number'] = 'Τηλέφωνο';
 $lang['phone'] = 'Τηλέφωνο';

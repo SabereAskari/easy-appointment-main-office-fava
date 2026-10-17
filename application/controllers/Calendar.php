@@ -231,6 +231,13 @@ class Calendar extends EA_Controller
             'customers' => $customers,
             'default_language' => setting('default_language'),
             'default_timezone' => setting('default_timezone'),
+            'custom_field_labels' => array_filter([
+                'custom_field_1' => setting('label_custom_field_1'),
+                'custom_field_2' => setting('label_custom_field_2'),
+                'custom_field_3' => setting('label_custom_field_3'),
+                'custom_field_4' => setting('label_custom_field_4'),
+                'custom_field_5' => setting('label_custom_field_5'),
+            ]),
         ]);
 
         html_vars([
@@ -678,6 +685,15 @@ class Calendar extends EA_Controller
 
             unset($appointment);
 
+            // Include custom field labels for display in the calendar popover
+            $response['custom_field_labels'] = [];
+            for ($i = 1; $i <= 5; $i++) {
+                $label = setting('label_custom_field_' . $i);
+                if ($label) {
+                    $response['custom_field_labels']['custom_field_' . $i] = $label;
+                }
+            }
+
             $user_id = session('user_id');
 
             $role_slug = session('role_slug');
@@ -832,6 +848,15 @@ class Calendar extends EA_Controller
             }
 
             unset($appointment);
+
+            // Include custom field labels for display in the calendar popover
+            $response['custom_field_labels'] = [];
+            for ($i = 1; $i <= 5; $i++) {
+                $label = setting('label_custom_field_' . $i);
+                if ($label) {
+                    $response['custom_field_labels']['custom_field_' . $i] = $label;
+                }
+            }
 
             // Get unavailability periods (only for provider).
             $response['unavailabilities'] = [];

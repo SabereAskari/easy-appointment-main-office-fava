@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Finnish
 $lang['page_title'] = 'Varaa aika';
 $lang['service_and_provider'] = 'Valitse palvelu ja henkilö';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Valitse päivämäärä ja aika';
 $lang['no_available_hours'] = 'Valitsemallesi päivälle ei ole vapaita aikoja';
 $lang['appointment_hour_missing'] = 'Valitse kellonaika ennen jatkamista';
 $lang['customer_information'] = 'Syötä tietosi';
-$lang['first_name'] = 'Etunimi';
-$lang['last_name'] = 'Sukunimi';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'Sähköposti';
 $lang['phone_number'] = 'Puhelinnumero';
 $lang['phone'] = 'Puhelin';

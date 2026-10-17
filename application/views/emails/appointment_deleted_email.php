@@ -13,7 +13,7 @@
 
 $customer_first_name = trim((string) ($customer['first_name'] ?? ''));
 $customer_last_name = trim((string) ($customer['last_name'] ?? ''));
-$customer_full_name = trim($customer_first_name . ' ' . $customer_last_name);
+$customer_full_name = $customer_first_name ?: trim($customer_first_name . ' ' . $customer_last_name);
 $customer_email = trim((string) ($customer['email'] ?? ''));
 $customer_phone_number = trim((string) ($customer['phone_number'] ?? ''));
 $customer_address = trim((string) ($customer['address'] ?? ''));

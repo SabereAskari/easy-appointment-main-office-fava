@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Shqip
 $lang['page_title'] = 'Rezervoni Takim Me';
 $lang['service_and_provider'] = 'Shërbimi & Ofruesi';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Data dhe Ora e Takimit';
 $lang['no_available_hours'] = 'Nuk ka orare të disponueshme për datën e zgjedhur. Ju lutemi zgjidhni një datë tjetër.';
 $lang['appointment_hour_missing'] = 'Ju lutemi zgjidhni një orar takimi përpara se të vazhdoni.';
 $lang['customer_information'] = 'Informacioni i Klientit';
-$lang['first_name'] = 'Emri';
-$lang['last_name'] = 'Mbiemri';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'Email';
 $lang['phone_number'] = 'Numri i Telefonit';
 $lang['phone'] = 'Telefon';

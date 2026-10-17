@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Polish
 $lang['page_title'] = 'Zamów wizytę';
 $lang['service_and_provider'] = 'Wybierz Zabieg i Personel';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Wybierz Datę i Czas Wizyty';
 $lang['no_available_hours'] = 'Brak dostępnych terminów w wybranym dniu, proszę wybrać inny dzień.';
 $lang['appointment_hour_missing'] = 'Proszę wybrać godzinę wizyty przed kontynuowaniem.';
 $lang['customer_information'] = 'Wypełnij Twoje informacje.';
-$lang['first_name'] = 'Imię';
-$lang['last_name'] = 'Nazwisko';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-mail';
 $lang['phone_number'] = 'Numer telefonu';
 $lang['phone'] = 'Telefon';

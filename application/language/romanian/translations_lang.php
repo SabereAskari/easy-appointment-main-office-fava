@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Romanian
 $lang['page_title'] = 'Programeaza întâlniri cu';
 $lang['service_and_provider'] = 'Selecteaza Serviciul si Furnizorul';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Selecteaza data si ora întâlnirii';
 $lang['no_available_hours'] = 'Nu este timp disponibil pentru data selectata. Va rugam sa selectati alta data.';
 $lang['appointment_hour_missing'] = 'Va rugam selectati ora întâlnirii înainte de a continua.';
 $lang['customer_information'] = 'Informatii despre dumneavoastra';
-$lang['first_name'] = 'Prenume';
-$lang['last_name'] = 'Nume';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-mail';
 $lang['phone_number'] = 'Numar de telefon';
 $lang['phone'] = 'Telefon';

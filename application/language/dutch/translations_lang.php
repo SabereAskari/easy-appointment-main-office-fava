@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Dutch
 $lang['page_title'] = 'Boek afspraak met';
 $lang['service_and_provider'] = 'Kies een dienst en een medewerker';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Selecteer een datum en tijd';
 $lang['no_available_hours'] = 'Het is momenteel niet mogelijk een afspraak te maken op die datum. Kies een andere datum.';
 $lang['appointment_hour_missing'] = 'Kies een tijd voordat u verder gaat.';
 $lang['customer_information'] = 'Vul uw informatie in';
-$lang['first_name'] = 'Voornaam';
-$lang['last_name'] = 'Achternaam';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-mail';
 $lang['phone_number'] = 'Telefoonnummer';
 $lang['phone'] = 'Telefoon';

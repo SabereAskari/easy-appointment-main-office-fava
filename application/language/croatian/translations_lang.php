@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Croatian
 $lang['page_title'] = 'Zakažite sastanak s';
 $lang['service_and_provider'] = 'Usluga & Pružatelj';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Datum i vrijeme sastanka';
 $lang['no_available_hours'] = 'Nema dostupnih termina za odabrani datum. Molimo odaberite drugi datum.';
 $lang['appointment_hour_missing'] = 'Molimo odaberite vrijeme sastanka prije nastavka.';
 $lang['customer_information'] = 'Informacije o klijentu';
-$lang['first_name'] = 'Ime';
-$lang['last_name'] = 'Prezime';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-pošta';
 $lang['phone_number'] = 'Broj telefona';
 $lang['phone'] = 'Telefon';

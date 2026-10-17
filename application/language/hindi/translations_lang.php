@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // Hindi
 $lang['page_title'] = 'नअपॉइंटमेंट बुक करें';
 $lang['service_and_provider'] = 'प्रदान करनेवाला और सेवा का चयन करें';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'अपॉइंटमेंट की त�
 $lang['no_available_hours'] = 'चयनित तिथि के लिए कोई घंटे उपलब्ध नहीं है, एक और चयन करें';
 $lang['appointment_hour_missing'] = 'आगे बढ़ने से पहले एक नियुक्ति घंटे का चयन करें.';
 $lang['customer_information'] = 'आपकी जानकारी भरें';
-$lang['first_name'] = 'पहला नाम';
-$lang['last_name'] = 'अंतिम नाम';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'ईमेल';
 $lang['phone_number'] = 'फ़ोन नंबर';
 $lang['phone'] = 'फोन';

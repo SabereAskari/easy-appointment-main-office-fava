@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+﻿<?php defined('BASEPATH') or exit('No direct script access allowed');
 // French
 $lang['page_title'] = 'Prendre rendez-vous avec...';
 $lang['service_and_provider'] = 'Choisissez une prestation et un exécutant';
@@ -12,8 +12,8 @@ $lang['appointment_date_and_time'] = 'Choisissez la date et l’heure de votre r
 $lang['no_available_hours'] = 'Il n’y a pas d’heures de rendez-vous disponibles pour la date sélectionnée. Choisissez une autre date s’il vous plaît.';
 $lang['appointment_hour_missing'] = 'S’il vous plaît, choisissez une heure de rendez-vous avant de pouvoir poursuivre.';
 $lang['customer_information'] = 'Remplissez vos informations';
-$lang['first_name'] = 'Prénom';
-$lang['last_name'] = 'Nom';
+$lang['first_name'] = '??? ????';
+$lang['last_name'] = '??? ?????????????';
 $lang['email'] = 'E-mail';
 $lang['phone_number'] = 'Numéro de téléphone';
 $lang['phone'] = 'Téléphone';
